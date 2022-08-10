@@ -1,3 +1,4 @@
+from datetime import datetime
 from channels.generic.websocket import JsonWebsocketConsumer
 from asgiref.sync import async_to_sync
 
@@ -26,7 +27,7 @@ class ChatConsumer(JsonWebsocketConsumer):
         self.send_json(
             {
                 "type": "welcome_message",
-                "message": "Hey there! You've successfully connected!",
+                "message": f"{datetime.now()} [INFO]: Initial connection made",
             }
         )
 

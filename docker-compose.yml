@@ -1,27 +1,6 @@
 version: '3.9'
 
 services:
-  postgres:
-    container_name: devel_postgres
-    image: postgres
-    ports:
-      - "5432:5432"
-    volumes:
-      - pg_data_3:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: Princess
-      POSTGRES_PASSWORD: Rosella
-      POSTGRES_DB: Daventry
-  pgadmin:
-    container_name: devel_pgadmin
-    image: dpage/pgadmin4
-    depends_on:
-      - postgres
-    ports:
-      - "5050:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@sierra.com
-      PGADMIN_DEFAULT_PASSWORD: password
   redis:
       container_name: devel_redis
       image: redis:6
@@ -29,5 +8,3 @@ services:
         - "6379:6379"
       environment:
         ALLOW_EMPTY_PASSWORD: yes
-volumes:
-  pg_data_3:
