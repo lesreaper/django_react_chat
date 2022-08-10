@@ -1,0 +1,10 @@
+# dependencies
+/client/node_modules
+/client/.pnp
+.pnp.js
+
+# testing
+/client/coverage
+
+# production
+/client/build
